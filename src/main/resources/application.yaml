@@ -1,0 +1,24 @@
+server:
+  port: 8081
+  servlet:
+    context-path: /pokedexapi
+
+pokemon-external-api: https://pokeapi.co/api/v2/pokemon
+
+
+spring:
+  datasource:
+    driverClassName: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/pokedexapi-db
+    username: postgres
+    password: 12345
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        jdbc:
+          lob:
+            non-contextual-creation: true
